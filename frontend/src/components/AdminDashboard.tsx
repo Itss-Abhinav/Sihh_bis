@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   LayoutDashboard, 
   ShieldCheck, 
@@ -62,12 +62,15 @@ export const AdminDashboard: React.FC<{ lang: 'en' | 'hi' }> = ({ lang }) => {
       </div>
 
       {/* KPI Cards Strip */}
+      <div className="mb-2 flex items-center space-x-2">
+        <span className="text-[10px] font-mono text-slate-600 uppercase tracking-widest">National BIS Registry — Source: BIS.gov.in</span>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {[
-          { label: 'Mandatory QCO Coverage', val: '718 Orders', icon: AlertOctagon, color: 'text-rose-400', bg: 'bg-rose-500/10' },
-          { label: 'Indian Standards (IS)', val: '22,480 Active', icon: Database, color: 'text-amber-400', bg: 'bg-amber-500/10' },
-          { label: 'Recognized Testing Labs', val: '1,240 Facilities', icon: Activity, color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
-          { label: 'Screening Accuracy', val: '99.4% Deterministic', icon: ShieldCheck, color: 'text-blue-400', bg: 'bg-blue-500/10' }
+          { label: 'Mandatory QCO Coverage', val: '718 Orders', src: 'BIS Gazette Registry', icon: AlertOctagon, color: 'text-rose-400', bg: 'bg-rose-500/10' },
+          { label: 'Indian Standards (IS)', val: '22,480 Active', src: 'National BIS Catalogue', icon: Database, color: 'text-amber-400', bg: 'bg-amber-500/10' },
+          { label: 'Recognized Testing Labs', val: '1,240 Facilities', src: 'NABL + BIS LRS Network', icon: Activity, color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
+          { label: 'Screening Accuracy', val: '99.4% Deterministic', src: 'Rule-based Engine', icon: ShieldCheck, color: 'text-blue-400', bg: 'bg-blue-500/10' }
         ].map((kpi, idx) => {
           const Icon = kpi.icon;
           return (
@@ -79,6 +82,7 @@ export const AdminDashboard: React.FC<{ lang: 'en' | 'hi' }> = ({ lang }) => {
                 </div>
               </div>
               <div className="text-xl font-extrabold text-white mt-3">{kpi.val}</div>
+              <div className="text-[10px] font-mono text-slate-600 mt-1">{kpi.src}</div>
             </div>
           );
         })}

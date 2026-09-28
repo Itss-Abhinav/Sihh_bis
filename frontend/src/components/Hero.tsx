@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { 
   Zap, 
   Sparkles, 
@@ -161,6 +161,11 @@ export const Hero: React.FC<HeroProps> = ({ onSelectPreset, lang }) => {
 
         {/* Key Statistics Strip */}
         <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-slate-800/80">
+          {/* Source label */}
+          <div className="col-span-2 md:col-span-4 -mb-2">
+            <span className="text-[10px] font-mono text-slate-600 uppercase tracking-widest">National BIS Registry — Source: BIS.gov.in</span>
+          </div>
+
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
               <FileCheck2 className="w-5 h-5" />
